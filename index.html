@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Parker Janaki Santosh | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 17, 32, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            z-index: 1000;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #d1d5db;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 8% 70px;
+
+            background:
+                radial-gradient(circle at top right, #172554, transparent 35%),
+                radial-gradient(circle at bottom left, #1e1b4b, transparent 35%),
+                #0b1120;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        /* PROFILE PHOTO */
+
+         .profile-circle {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            border: 4px solid #60a5fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #172033;
+            font-size: 55px;
+            font-weight: bold;
+            color: #60a5fa;
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.25);
+        }
+        .profile-circle img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+       }
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 7px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #2563eb;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid #3b82f6;
+            color: #60a5fa;
+        }
+
+        .secondary:hover {
+            background: #1e3a8a;
+            transform: translateY(-3px);
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .section-title span {
+            color: #60a5fa;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #94a3b8;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+
+            gap: 18px;
+        }
+
+        .skill {
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .skill h3 {
+            color: #60a5fa;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #94a3b8;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 25px;
+
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .project-card {
+            background: #111827;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #3b82f6;
+        }
+
+        .project-card h3 {
+            color: #60a5fa;
+            margin-bottom: 12px;
+            font-size: 23px;
+        }
+
+        .project-card .technology {
+            color: #e5e7eb;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .project-card h4 {
+            color: #cbd5e1;
+            margin-bottom: 10px;
+        }
+
+        .project-card ul {
+            margin-left: 20px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .project-card ul li {
+            margin-bottom: 6px;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: #111827;
+            border-left: 4px solid #3b82f6;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateX(5px);
+            border-left-color: #60a5fa;
+        }
+
+        .education-card h3 {
+            color: #60a5fa;
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        .education-card p {
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .education-card .year {
+            float: right;
+            color: #94a3b8;
+        }
+
+        /* ================= SOFT SKILLS ================= */
+
+        .soft-skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .soft-skill {
+            background: #111827;
+            border: 1px solid #1e293b;
+
+            padding: 15px 25px;
+
+            border-radius: 30px;
+
+            color: #cbd5e1;
+
+            transition: 0.3s;
+        }
+
+        .soft-skill:hover {
+            border-color: #3b82f6;
+            transform: translateY(-4px);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+
+            text-align: center;
+
+            background: #111827;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            border: 1px solid #1e293b;
+        }
+
+        .contact-box h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            margin: 15px 0;
+            color: #cbd5e1;
+        }
+
+        .contact-box a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background: #070b14;
+
+            color: #64748b;
+
+            border-top: 1px solid #1e293b;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 11px;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .profile-circle {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            .education-card .year {
+                float: none;
+                display: block;
+                margin-top: 5px;
+            }
+
+            .btn {
+                padding: 11px 20px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <div class="logo">
+            Parkar.
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <div class="profile-circle">
+                <img src="images/profile.jpg" alt="Janaki">
+            </div>
+
+
+            <h1>
+
+                Hi, I'm
+
+                <span>
+                    Parkar Janaki Santosh
+                </span>
+
+            </h1>
+
+
+            <h2>
+
+                MCA Student | Python Developer | AI/ML Enthusiast
+
+            </h2>
+
+
+            <p>
+
+                I am an MCA student interested in Python programming,
+                Artificial Intelligence, Machine Learning and
+                Natural Language Processing. I enjoy developing
+                practical applications and learning new technologies.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+
+                    View My Projects
+
+                </a>
+
+
+                <a href="#contact" class="btn secondary">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+
+            About <span>Me</span>
+
+        </h2>
+
+
+        <div class="about">
+
+            <p>
+
+                I am currently pursuing a Master of Computer Applications
+                (MCA) at PES Modern College of Engineering, Pune.
+
+            </p>
+
+
+            <p>
+
+                I have a strong foundation in Python programming,
+                SQL, Artificial Intelligence, Machine Learning,
+                Natural Language Processing and Data Structures.
+
+            </p>
+
+
+            <p>
+
+                I enjoy developing practical software applications,
+                exploring new technologies and improving my
+                problem-solving abilities.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+
+            Technical <span>Skills</span>
+
+        </h2>
+
+
+        <div class="skills-container">
+
+
+            <div class="skill">
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Programming
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    SQL
+                </h3>
+
+                <p>
+                    Database Management
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    NLP
+                </h3>
+
+                <p>
+                    Natural Language Processing
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+                <p>
+                    ML Concepts
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Sentiment Analysis
+                </h3>
+
+                <p>
+                    Text Analysis
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Git
+                </h3>
+
+                <p>
+                    Version Control
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <p>
+                    Code Repository
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    OOP
+                </h3>
+
+                <p>
+                    Object Oriented Programming
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    DBMS
+                </h3>
+
+                <p>
+                    Database Management Systems
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Data Structures
+                </h3>
+
+                <p>
+                    Data Structures Concepts
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+
+            My <span>Projects</span>
+
+        </h2>
+
+
+        <div class="projects-container">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <h3>
+                    1. AI Chatbot
+                </h3>
+
+
+                <p class="technology">
+
+                    AI Chatbot | Python, NLP, Machine Learning
+
+                </p>
+
+
+                <p>
+
+                    Developed an interactive chatbot capable of
+                    understanding user queries and providing
+                    relevant responses.
+
+                </p>
+
+
+                <h4>
+                    Features:
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        Natural language query processing
+                    </li>
+
+                    <li>
+                        Automated responses to user queries
+                    </li>
+
+                    <li>
+                        User-friendly chat interface
+                    </li>
+
+                    <li>
+                        Handles frequently asked questions
+                    </li>
+
+                    <li>
+                        Basic conversational context management
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <h3>
+                    2. Speech-to-Text System
+                </h3>
+
+
+                <p class="technology">
+
+                    Speech-to-Text Application | Python,
+                    Speech Recognition
+
+                </p>
+
+
+                <p>
+
+                    Developed a speech recognition application
+                    that converts spoken words into text.
+
+                </p>
+
+
+                <h4>
+                    Features:
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        Speech recognition
+                    </li>
+
+                    <li>
+                        Converts voice into text
+                    </li>
+
+                    <li>
+                        User-friendly application
+                    </li>
+
+                    <li>
+                        Speech processing
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+
+            My <span>Education</span>
+
+        </h2>
+
+
+        <div class="education">
+
+
+            <!-- MCA -->
+
+            <div class="education-card">
+
+                <span class="year">
+                    2025 – Present
+                </span>
+
+
+                <h3>
+
+                    Master of Computer Applications (MCA)
+
+                </h3>
+
+
+                <p>
+
+                    PES Modern College of Engineering, Pune
+
+                </p>
+
+            </div>
+
+
+            <!-- BSC IT -->
+
+            <div class="education-card">
+
+                <span class="year">
+                    2022 – 2025
+                </span>
+
+
+                <h3>
+
+                    Bachelor of Science in IT (B.Sc. IT)
+
+                </h3>
+
+
+                <p>
+
+                    N B Mehta College of Science
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SOFT SKILLS ================= -->
+
+    <section>
+
+        <h2 class="section-title">
+
+            Soft <span>Skills</span>
+
+        </h2>
+
+
+        <div class="soft-skills">
+
+
+            <div class="soft-skill">
+                Communication
+            </div>
+
+
+            <div class="soft-skill">
+                Teamwork
+            </div>
+
+
+            <div class="soft-skill">
+                Problem Solving
+            </div>
+
+
+            <div class="soft-skill">
+                Time Management
+            </div>
+
+
+            <div class="soft-skill">
+                Quick Learning
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+
+            Contact <span>Me</span>
+
+        </h2>
+
+
+        <div class="contact-box">
+
+
+            <h2>
+                Parker Janaki Santosh
+            </h2>
+
+
+            <p>
+
+                📍 Pune, Maharashtra - 411030
+
+            </p>
+
+
+            <p>
+
+                ✉️
+
+                <a href="mailto:janakiparkar@gmail.com">
+
+                    janakiparkar@gmail.com
+                </a>
+
+            </p>
+
+            6359075969
+            <p>
+
+                💻
+
+                <a href="https://github.com/Janaki-Parkar" target="_blank">
+
+                    GitHub Profile
+
+                </a>
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <a href="mailto:janakiparkar@gmail.com" class="btn primary">
+
+                    Email Me
+
+                </a>
+
+
+                <a href="https://github.com/Janaki-Parkar" target="_blank" class="btn secondary">
+
+                    GitHub
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Parker Janaki Santosh | Portfolio
+
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const links =
+            document.querySelectorAll("nav ul li a");
+
+
+        links.forEach(link => {
+
+            link.addEventListener("click", function () {
+
+                links.forEach(item => {
+
+                    item.style.color = "#d1d5db";
+
+                });
+
+
+                this.style.color = "#60a5fa";
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
